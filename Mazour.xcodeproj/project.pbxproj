@@ -13,6 +13,9 @@
 		68B544DB1ADDED8700B97B90 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68B544DA1ADDED8700B97B90 /* Images.xcassets */; };
 		68B544DE1ADDED8700B97B90 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68B544DC1ADDED8700B97B90 /* LaunchScreen.xib */; };
 		68B544EA1ADDED8700B97B90 /* MazourTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B544E91ADDED8700B97B90 /* MazourTests.swift */; };
+		68B544F41ADDF59400B97B90 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 68B544F31ADDF59400B97B90 /* libz.dylib */; };
+		68B544F61ADDF78100B97B90 /* Gimbal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68B544F51ADDF78100B97B90 /* Gimbal.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		68B544F71ADDF8AB00B97B90 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 68B544D21ADDED8700B97B90 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,9 @@
 		68B544E31ADDED8700B97B90 /* MazourTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MazourTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		68B544E81ADDED8700B97B90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68B544E91ADDED8700B97B90 /* MazourTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MazourTests.swift; sourceTree = "<group>"; };
+		68B544F31ADDF59400B97B90 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		68B544F51ADDF78100B97B90 /* Gimbal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Gimbal.framework; path = ../../Downloads/gimbalsdk_2.11.2_ios/Frameworks/Gimbal.framework; sourceTree = "<group>"; };
+		68B544F81ADDF8CB00B97B90 /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +49,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68B544F61ADDF78100B97B90 /* Gimbal.framework in Frameworks */,
+				68B544F41ADDF59400B97B90 /* libz.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +67,8 @@
 		68B544C51ADDED8600B97B90 = {
 			isa = PBXGroup;
 			children = (
+				68B544F51ADDF78100B97B90 /* Gimbal.framework */,
+				68B544F31ADDF59400B97B90 /* libz.dylib */,
 				68B544D01ADDED8600B97B90 /* Mazour */,
 				68B544E61ADDED8700B97B90 /* MazourTests */,
 				68B544CF1ADDED8600B97B90 /* Products */,
@@ -91,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				68B544D21ADDED8700B97B90 /* Info.plist */,
+				68B544F81ADDF8CB00B97B90 /* Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -192,6 +203,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68B544F71ADDF8AB00B97B90 /* Info.plist in Resources */,
 				68B544D91ADDED8700B97B90 /* Main.storyboard in Resources */,
 				68B544DE1ADDED8700B97B90 /* LaunchScreen.xib in Resources */,
 				68B544DB1ADDED8700B97B90 /* Images.xcassets in Resources */,
@@ -338,9 +350,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEFINES_MODULE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/Labuser/Downloads/gimbalsdk_2.11.2_ios/Frameworks,
+				);
 				INFOPLIST_FILE = Mazour/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = Mazour/Header.h;
 			};
 			name = Debug;
 		};
@@ -348,9 +366,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEFINES_MODULE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/Labuser/Downloads/gimbalsdk_2.11.2_ios/Frameworks,
+				);
 				INFOPLIST_FILE = Mazour/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = Mazour/Header.h;
 			};
 			name = Release;
 		};
